@@ -1,0 +1,73 @@
+# Deploys the built site to your EXISTING AWS S3 + CloudFront stack (the cheap setup you already have).
+#
+# --- Setup (pick ONE auth path) ---
+# (A) RECOMMENDED — OIDC (no static AWS keys stored in GitHub):
+#   1. Create an IAM role (trusted entity = "Identity provider") with:
+#        - issuer:  https://token.actions.githubusercontent.com
+#        - aud:     token/actions/OWNER:REPO/:pull_request  AND  /OWNER:REPO/:workflow
+#        - a policy allowing s3:PutObject/GetObject/DeleteObject/... on s3://YOUR_BUCKET/*
+#          and cloudfront:CreateInvalidation on that distribution
+#   2. Add secrets on Settings -> Environments -> "production":
+#        AWS_ROLE_TO_ASSUME   arn:aws:iam::<acct>:role/<your-role>
+#        AWS_REGION          us-east-1
+#        AWS_S3_BUCKET       your-bucket
+#        AWS_CLOUDFRONT_ID   your-distribution-id (optional; omit to skip invalidation)
+#   3. Repo -> Settings -> Actions -> General -> "Workflow permissions" -> check
+#        "Allow GitHub Actions to create and reuse GitHub App tokens" and
+#        select "Read and write".
+# (B) SIMPLER — static access key (skip if you used (A)):
+#      Add AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY / AWS_S3_BUCKET / etc. instead.
+name: Deploy (AWS S3 + CloudFront)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  # Needed for OIDC role assumption. Harmless if you use static keys.
+  id-token: write
+  contents: read
+
+concurrency:
+  group: aws-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build + sync to S3 + invalidate CloudFront
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Build site
+        uses: ./.github/actions/hugo-build
+        with:
+          hugo-version: 0.166.0
+          extended: true
+
+      # Works with either OIDC (web-identity) or static keys via env.
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+
+      - name: Sync static site to S3
+        shell: bash
+        run: |
+          aws s3 sync public/ "s3://${{ secrets.AWS_S3_BUCKET }}/" \
+            --delete \
+            --cache-control "max-age=3600" \
+            --exclude "private/*"
+
+      - name: Invalidate CloudFront cache
+        shell: bash
+        run: |
+          if [ -n "${{ secrets.AWS_CLOUDFRONT_ID }}" ]; then
+            aws cloudfront create-invalidation \
+              --distribution-id "${{ secrets.AWS_CLOUDFRONT_ID }}" \
+              --paths "/*"
+            echo "Cache invalidation requested for ${{ secrets.AWS_CLOUDFRONT_ID }}."
+          else
+            echo "AWS_CLOUDFRONT_ID not set — skipping cache invalidation."
+          fi

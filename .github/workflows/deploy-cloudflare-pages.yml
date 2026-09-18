@@ -1,0 +1,45 @@
+# Deploys the built site to Cloudflare Pages.
+# Cloudflare still maintains Pages (free tier: 500 deploys/mo, unlimited GB
+# bandwidth, free SSL + custom domain) and ships an official Hugo guide, so it
+# is a great fit. (Note: `cloudflare/pages-action` is gone/404 — we deploy with
+# the documented "Direct Upload" path via the Wrangler CLI instead.)
+#
+# SETUP (one-time):
+#   1. Create the Pages project so Wrangler has something to deploy to:
+#        npx wrangler pages project create theagenticarch      # (or via dashboard)
+#   2. Add a secret under Settings -> Environments -> "production":
+#        CLOUDFLARE_API_TOKEN   token with scope "Cloudflare Pages (edit)"
+#   (Optional, to attach your custom domain later: also add CLOUDFLARE_ACCOUNT_ID
+#    and set the domain in the dashboard. Not required for this workflow.)
+name: Deploy (Cloudflare Pages)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build + deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Build site
+        uses: ./.github/actions/hugo-build
+        with:
+          hugo-version: 0.166.0
+          extended: true
+
+      - name: Deploy to Cloudflare Pages (wrangler CLI, Direct Upload)
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm_config_cache="$(pwd)/.npm"
+          npx --yes wrangler@4 pages deploy public --branch=main

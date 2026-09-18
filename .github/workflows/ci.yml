@@ -1,0 +1,26 @@
+# Build check: runs the same Hugo build the deploys use, on every push/PR.
+# Fails fast if the site won't build, before any deploy job is triggered.
+name: CI (Hugo build)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build site
+        uses: ./.github/actions/hugo-build
+        with:
+          extended: true
+
+      - name: Show output tree (top level)
+        shell: bash
+        run: find public -maxdepth 1 -printf '%p\n' | sort

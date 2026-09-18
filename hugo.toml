@@ -1,0 +1,90 @@
+baseURL = 'https://theagenticarch.com/'
+locale = 'en-us'
+title = 'The Agentic Arch'
+theme = 'PaperMod'
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# Google Analytics (optional)
+# googleAnalytics = "G-XXXXXXXXXX"
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[params]
+  env = 'production'
+  description = 'Notes on agentic architectures: LLM systems, agents, tooling, and the patterns that make them work.'
+  author = 'Hugo Guerrero'
+  showReadingTime = true
+  disableSpecificTags = ['content', 'gallery']
+  origin = ['https://theagenticarch.com']
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  hideScrollbar = false
+
+  [params.label]
+    text = 'The Agentic Arch'
+    icon = '/favicon.svg'
+    iconHeight = 26
+
+[[params.socialIcons]]
+  name = 'github'
+  url  = 'https://github.com/hguerrero'
+
+[[params.socialIcons]]
+  name = 'linkedin'
+  url  = 'https://linkedin.com/in/hguerrero'
+
+[[params.socialIcons]]
+  name = 'rss'
+  url  = '/index.xml'
+
+[params.homeInfoParams]
+  title = 'The Agentic Arch'
+  content = 'Notes on agentic architectures: LLM systems, agents, tooling, and the patterns that make them work.'
+
+[[menu.main]]
+  identifier = 'posts'
+  name = ''
+  url = '/posts/'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'about'
+  name = ''
+  url = '/about/'
+  weight = 20
+
+[[menu.main]]
+  identifier = 'archive'
+  name = ''
+  url = '/archive/'
+  weight = 30
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = 'monokai'
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+[imaging]
+  resampleFilter = 'catmullrom'
+  anchor = 'smart'
+  [imaging.jpeg]
+    quality = 75
+  [imaging.webp]
+    quality = 75

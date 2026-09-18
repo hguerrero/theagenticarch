@@ -20,8 +20,11 @@
 name: Deploy (AWS S3 + CloudFront)
 
 on:
-  push:
-    branches: [main]
+  # OFF by default: the primary deployer is Cloudflare Pages.
+  # Run manually (Actions tab -> Deploy (AWS S3 + CloudFront) -> Run workflow),
+  # or set these secrets to enable push-based deploys:
+  #   push:
+  #     branches: [main]
   workflow_dispatch:
 
 permissions:

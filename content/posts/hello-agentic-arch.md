@@ -2,11 +2,11 @@
 title: 'Hello, Agentic Architect'
 date: 2026-09-18
 draft: false
-description: 'The first post on The Agentic Arch.'
+description: 'The first post on The Agentic Architect.'
 tags: ['agents', 'architecture']
 ---
 
-Welcome to **The Agentic Arch** — a place for notes on agentic architectures: LLM systems, autonomy, tooling, and the patterns that make them work in the real world.
+Welcome to **The Agentic Architect** — a place for notes on agentic architectures: LLM systems, autonomy, tooling, and the patterns that make them work in the real world.
 
 This is the first post. Expect:
 

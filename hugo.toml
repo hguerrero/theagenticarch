@@ -1,6 +1,6 @@
 baseURL = 'https://theagenticarch.com/'
 locale = 'en-us'
-title = 'The Agentic Arch'
+title = 'The Agentic Architect'
 theme = 'PaperMod'
 enableRobotsTXT = true
 buildDrafts = false
@@ -32,7 +32,7 @@ buildExpired = false
   hideScrollbar = false
 
   [params.label]
-    text = 'The Agentic Arch'
+    text = 'The Agentic Architect'
     icon = '/favicon.svg'
     iconHeight = 26
 
@@ -42,14 +42,14 @@ buildExpired = false
 
 [[params.socialIcons]]
   name = 'linkedin'
-  url  = 'https://linkedin.com/in/hguerrero'
+  url  = 'https://linkedin.com/in/hugoguerrero'
 
 [[params.socialIcons]]
   name = 'rss'
   url  = '/index.xml'
 
 [params.homeInfoParams]
-  title = 'The Agentic Arch'
+  title = 'The Agentic Architect'
   content = 'Notes on agentic architectures: LLM systems, agents, tooling, and the patterns that make them work.'
 
 [[menu.main]]

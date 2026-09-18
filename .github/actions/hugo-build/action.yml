@@ -1,5 +1,6 @@
-# Reusable Hugo build. Used by CI and every deploy workflow so the
-# build steps live in exactly one place.
+# Reusable Hugo build. Used by CI and every deploy workflow so the build
+# steps live in exactly one place. The caller MUST run actions/checkout first
+# (a local composite action can't be located until the repo is checked out).
 name: 'hugo-build'
 description: 'Install Hugo and build the static site into ./public.'
 
@@ -16,12 +17,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Checkout
-      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      with:
-        submodules: recursive
-        fetch-depth: 0
-
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
       with:

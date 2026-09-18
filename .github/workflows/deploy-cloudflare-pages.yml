@@ -1,16 +1,19 @@
 # Deploys the built site to Cloudflare Pages.
-# Cloudflare still maintains Pages (free tier: 500 deploys/mo, unlimited GB
-# bandwidth, free SSL + custom domain) and ships an official Hugo guide, so it
-# is a great fit. (Note: `cloudflare/pages-action` is gone/404 — we deploy with
-# the documented "Direct Upload" path via the Wrangler CLI instead.)
+# Cloudflare Pages free tier = 500 deploys/mo, unlimited bandwidth, free SSL +
+# custom domain, and it ships an official Hugo guide. (The older
+# `cloudflare/pages-action` is gone/404, so this uses the documented
+# "Direct Upload" path via cloudflare/wrangler-action.)
 #
-# SETUP (one-time):
-#   1. Create the Pages project so Wrangler has something to deploy to:
-#        npx wrangler pages project create theagenticarch      # (or via dashboard)
-#   2. Add a secret under Settings -> Environments -> "production":
-#        CLOUDFLARE_API_TOKEN   token with scope "Cloudflare Pages (edit)"
-#   (Optional, to attach your custom domain later: also add CLOUDFLARE_ACCOUNT_ID
-#    and set the domain in the dashboard. Not required for this workflow.)
+# SETUP (one-time, in the Cloudflare dashboard):
+#   1. Create the Pages project (direct-upload type) named, e.g. `theagenticarch`:
+#        npx wrangler pages project create theagenticarch
+#      (or dashboard -> Workers & Pages -> Create application -> Drag and drop.)
+#   2. Make an API Token -> Permissions: Account > Cloudflare Pages > Edit.
+#      Get your Account ID (Zone Overview -> right-hand "API" section).
+#   3. On GitHub: Settings -> Secrets and variables -> Actions ->
+#        Secrets:  CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
+#        Variables: CF_PAGES_PROJECT (the project name you used in step 1)
+#   4. (Optional) Attach theagenticarch.com to the project in the dashboard.
 name: Deploy (Cloudflare Pages)
 
 on:
@@ -20,6 +23,7 @@ on:
 
 permissions:
   contents: read
+  deployments: write
 
 concurrency:
   group: cloudflare-production
@@ -29,17 +33,24 @@ jobs:
   deploy:
     name: Build + deploy to Cloudflare Pages
     runs-on: ubuntu-latest
-    environment: production
     steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
       - name: Build site
         uses: ./.github/actions/hugo-build
         with:
           hugo-version: 0.166.0
           extended: true
 
-      - name: Deploy to Cloudflare Pages (wrangler CLI, Direct Upload)
-        shell: bash
-        run: |
-          set -euo pipefail
-          npm_config_cache="$(pwd)/.npm"
-          npx --yes wrangler@4 pages deploy public --branch=main
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=${{ vars.CF_PAGES_PROJECT }}
+          packageManager: npm
+          gitHubToken: ${{ github.token }}

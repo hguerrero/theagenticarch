@@ -1,0 +1,53 @@
+.home-hero {
+  padding: 4rem 0 3rem;
+  max-width: 760px;
+}
+
+.home-eyebrow, .home-post-meta {
+  color: var(--secondary);
+  font-size: .9rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  font-size: clamp(2.3rem, 6vw, 4.25rem);
+  line-height: 1.08;
+  margin: .45rem 0 1.2rem;
+}
+
+.home-lede {
+  color: var(--secondary);
+  font-size: 1.2rem;
+  line-height: 1.65;
+  max-width: 660px;
+}
+
+.home-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.home-social { margin-top: 1rem; }
+.home-social .social-icons { display: flex; flex-wrap: wrap; margin-left: -10px; }
+.home-social .social-icons a { color: var(--secondary); }
+.home-social .social-icons a:hover { color: var(--primary); }
+.home-button { border: 1px solid var(--border); border-radius: 6px; color: var(--primary); padding: .65rem 1rem; text-decoration: none; }
+.home-button:hover, .home-button-primary { background: var(--primary); color: var(--theme); }
+
+.home-topics, .home-featured, .home-latest { border-top: 1px solid var(--border); padding: 2.5rem 0; }
+.home-topics h2, .home-featured h2, .home-latest h2 { margin-top: 0; }
+.home-topics h2 { margin-bottom: 1.25rem; }
+.home-topic-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+.home-topic-grid article { background: var(--entry); border-radius: 8px; padding: 1.25rem; }
+.home-topic-grid h3 { margin: 0 0 .5rem; }
+.home-topic-grid p, .home-featured p, .home-post p { color: var(--secondary); line-height: 1.6; }
+.home-featured { max-width: 760px; }
+.home-featured h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+.home-featured h2 a, .home-post h3 a { color: var(--primary); text-decoration: none; }
+.home-text-link, .home-section-heading a { font-weight: 600; text-decoration: none; }
+.home-section-heading { align-items: baseline; display: flex; justify-content: space-between; gap: 1rem; }
+.home-post { border-top: 1px solid var(--border); padding: 1.3rem 0; }
+.home-post h3 { font-size: 1.35rem; margin: .35rem 0; }
+.home-post-meta { margin: 0; }
+
+@media (max-width: 680px) {
+  .home-hero { padding-top: 2.5rem; }
+  .home-topic-grid { grid-template-columns: 1fr; }
+}

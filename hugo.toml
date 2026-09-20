@@ -16,7 +16,7 @@ buildExpired = false
 
 [params]
   env = 'production'
-  description = 'Notes on agentic architectures: LLM systems, agents, tooling, and the patterns that make them work.'
+  description = 'Architecture patterns for agentic systems people can trust: LLM systems, agents, tooling, and the patterns that make them work.'
   author = 'Hugo Guerrero'
   showReadingTime = true
   disableSpecificTags = ['content', 'gallery']
@@ -30,11 +30,18 @@ buildExpired = false
   ShowRssButtonInSectionTermList = true
   UseHugoToc = true
   hideScrollbar = false
+  mainSections = ['posts']
+
+  [params.assets]
+    favicon = '/theagenticarch-logo-32.png'
+    favicon16x16 = '/theagenticarch-logo-16.png'
+    favicon32x32 = '/theagenticarch-logo-32.png'
+    apple_touch_icon = '/theagenticarch-logo-180.png'
 
   [params.label]
     text = 'The Agentic Architect'
-    icon = '/favicon.svg'
-    iconHeight = 26
+    icon = '/theagenticarch-logo.png'
+    iconHeight = 42
 
 [[params.socialIcons]]
   name = 'github'
@@ -48,25 +55,38 @@ buildExpired = false
   name = 'rss'
   url  = '/index.xml'
 
-[params.homeInfoParams]
-  title = 'The Agentic Architect'
-  content = 'Notes on agentic architectures: LLM systems, agents, tooling, and the patterns that make them work.'
+[[params.socialIcons]]
+  name = 'instagram'
+  url  = 'https://www.instagram.com/theagenticarch/'
+
+[[params.socialIcons]]
+  name = 'youtube'
+  url  = 'https://www.youtube.com/@theagenticarch'
+
+[[params.socialIcons]]
+  name = 'tiktok'
+  url  = 'https://www.tiktok.com/@theagenticarch'
+
+[[params.socialIcons]]
+  name = 'facebook'
+  url  = 'https://www.facebook.com/profile.php?id=61592474153825'
+
 
 [[menu.main]]
   identifier = 'posts'
-  name = ''
+  name = 'Articles'
   url = '/posts/'
   weight = 10
 
 [[menu.main]]
   identifier = 'about'
-  name = ''
+  name = 'About'
   url = '/about/'
   weight = 20
 
 [[menu.main]]
   identifier = 'archive'
-  name = ''
+  name = 'Archive'
   url = '/archive/'
   weight = 30
 

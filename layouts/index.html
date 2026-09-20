@@ -1,0 +1,47 @@
+{{- define "main" }}
+{{- $welcome := site.GetPage "/posts/hello-agentic-arch" }}
+{{- $featured := site.GetPage "/posts/from-pong-to-minecraft-genai-ux" }}
+{{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+<section class="home-hero" aria-labelledby="home-title">
+  <p class="home-eyebrow">The Agentic Architect <span aria-hidden="true">·</span> with Hugo Guerrero</p>
+  <h1 id="home-title">Architecture patterns for agentic systems people can trust.</h1>
+  <p class="home-lede">Notes for the people building the capabilities, context, controls, and operating models behind useful AI agents.</p>
+  <div class="home-actions">
+    {{- with $featured }}<a class="home-button home-button-primary" href="{{ .RelPermalink }}">Start with the latest essay</a>{{ end }}
+    {{- with $welcome }}<a class="home-button" href="{{ .RelPermalink }}">Read the welcome note</a>{{ end }}
+  </div>
+  <div class="home-social" aria-label="Follow @theagenticarch">
+    {{- partial "social_icons.html" (dict "align" "") }}
+  </div>
+</section>
+
+<section class="home-topics" aria-labelledby="topics-title">
+  <h2 id="topics-title">What you’ll find here</h2>
+  <div class="home-topic-grid">
+    <article><h3>Agents, under the hood</h3><p>Orchestration, planning, evaluation, and the choices that shape agent behavior.</p></article>
+    <article><h3>APIs, MCP, and events</h3><p>The machine-accessible capabilities and context that agents can discover and compose.</p></article>
+    <article><h3>Real-world systems</h3><p>Identity, governance, observability, and reliability for agents that need to earn trust.</p></article>
+  </div>
+</section>
+
+{{- with $featured }}
+<section class="home-featured" aria-labelledby="featured-title">
+  <p class="home-eyebrow">Start here</p>
+  <h2 id="featured-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  <p>{{ .Description }}</p>
+  <a class="home-text-link" href="{{ .RelPermalink }}">Read the essay <span aria-hidden="true">→</span></a>
+</section>
+{{- end }}
+
+<section class="home-latest" aria-labelledby="latest-title">
+  <div class="home-section-heading"><h2 id="latest-title">Latest articles</h2><a href="{{ "/posts/" | relURL }}">View all <span aria-hidden="true">→</span></a></div>
+  {{- range first 3 $posts }}
+  <article class="home-post">
+    <p class="home-post-meta">{{ .Date.Format "January 2, 2006" }}{{ with .ReadingTime }} · {{ . }} min read{{ end }}</p>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Description }}</p>
+  </article>
+  {{- end }}
+</section>
+{{- end }}

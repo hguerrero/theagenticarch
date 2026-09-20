@@ -1,0 +1,18 @@
+{{- /* GA4 is only loaded after the reader opts in (see extend_footer.html for the banner). Hugo no longer ships an internal template, so PaperMod's include resolves here. */ -}}
+{{- with site.Config.Services.GoogleAnalytics.ID }}
+<script>
+  window.loadGA = function () {
+    if (window.gaLoaded) return;
+    window.gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id={{ . }}';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', '{{ . }}');
+  };
+  try { if (localStorage.getItem('ga-consent') === 'granted') window.loadGA(); } catch (e) {}
+</script>
+{{- end }}

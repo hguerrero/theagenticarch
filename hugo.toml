@@ -7,8 +7,9 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 
-# Google Analytics (optional)
-# googleAnalytics = "G-XXXXXXXXXX"
+# Google Analytics 4 measurement ID (rendered by layouts/_partials/google_analytics.html)
+[services.googleAnalytics]
+  id = 'G-GRYKZ2CY32'
 
 [minify]
   disableXML = true

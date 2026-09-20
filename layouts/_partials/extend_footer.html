@@ -1,0 +1,52 @@
+{{- with site.Config.Services.GoogleAnalytics.ID }}
+<div id="consent-banner" class="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p>This site uses Google Analytics cookies to understand how readers use it. Analytics only run if you accept. <a href="{{ "privacy/" | relURL }}">Privacy policy</a></p>
+  <div class="consent-actions">
+    <button type="button" data-consent="denied">Decline</button>
+    <button type="button" data-consent="granted" class="consent-accept">Accept</button>
+  </div>
+</div>
+<script>
+  (function () {
+    var banner = document.getElementById('consent-banner');
+    function stored() { try { return localStorage.getItem('ga-consent'); } catch (e) { return null; } }
+    function show() { banner.hidden = false; }
+    function choose(value) {
+      try { localStorage.setItem('ga-consent', value); } catch (e) {}
+      banner.hidden = true;
+      if (value === 'granted') {
+        window.loadGA && window.loadGA();
+      } else if (window.gaLoaded) {
+        // Withdrawn consent: stop tracking and drop GA cookies on next load.
+        document.cookie.split(';').forEach(function (c) {
+          var name = c.split('=')[0].trim();
+          if (name === '_ga' || name.indexOf('_ga_') === 0) {
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.' + location.hostname;
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+          }
+        });
+        location.reload();
+      }
+    }
+    banner.addEventListener('click', function (e) {
+      var v = e.target.getAttribute && e.target.getAttribute('data-consent');
+      if (v) choose(v);
+    });
+    var footer = document.querySelector('footer.footer');
+    if (footer) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.textContent = 'Cookie settings';
+      link.addEventListener('click', function (e) { e.preventDefault(); show(); });
+      var privacy = document.createElement('a');
+      privacy.href = '{{ "privacy/" | relURL }}';
+      privacy.textContent = 'Privacy';
+      footer.insertBefore(document.createTextNode(' · '), footer.firstChild);
+      footer.insertBefore(link, footer.firstChild);
+      footer.insertBefore(document.createTextNode(' · '), footer.firstChild);
+      footer.insertBefore(privacy, footer.firstChild);
+    }
+    if (!stored()) show();
+  })();
+</script>
+{{- end }}

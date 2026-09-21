@@ -19,6 +19,10 @@ name: Deploy (Cloudflare Pages)
 on:
   push:
     branches: [main]
+  # Hugo excludes future-dated posts. Rebuild daily so scheduled articles
+  # become visible without requiring a new commit.
+  schedule:
+    - cron: '15 5 * * *'
   workflow_dispatch:
 
 permissions:

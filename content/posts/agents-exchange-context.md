@@ -61,4 +61,4 @@ Those are context and control questions. Solve them well, and additional agents 
 
 The right mental model is simple: multi-agent systems are **context distribution systems with decision-makers attached**. Design the distribution carefully.
 
-*Part of [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/). Next: [Your AI Agent Needs a History, Not Just a Memory.](/posts/agents-need-history-not-just-memory/)*
+*Next: [Your AI Agent Needs a History, Not Just a Memory.](/posts/agents-need-history-not-just-memory/)*

@@ -76,4 +76,4 @@ That is the plumbing.
 
 And it is where agentic architecture begins.
 
-*This is the first essay in [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/). Next: [iPaaS Was Built for Applications. Agents Need a Context Mesh.](/posts/agents-need-a-context-mesh/)*
+*Next: [iPaaS Was Built for Applications. Agents Need a Context Layer.](/posts/agents-need-a-context-layer/)*

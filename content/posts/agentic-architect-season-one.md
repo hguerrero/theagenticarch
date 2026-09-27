@@ -16,9 +16,9 @@ The series starts from a simple observation: intelligence is only one part of an
 
 1. **September 22 — [Your Agents Don’t Need Better Models. They Need Better Plumbing.](/posts/agents-need-better-plumbing/)**  
    The integration layer, not the model, is often where agentic systems break.
-2. **September 29 — [iPaaS Was Built for Applications. Agents Need a Context Mesh.](/posts/agents-need-a-context-mesh/)**  
+2. **September 29 — [iPaaS Was Built for Applications. Agents Need a Context Layer.](/posts/agents-need-a-context-layer/)**  
    Why deterministic integration patterns are necessary but insufficient for autonomous systems.
-3. **October 6 — [Building the Context Mesh.](/posts/building-the-context-mesh/)**  
+3. **October 6 — [Building the Context Layer.](/posts/building-the-context-layer/)**  
    The practical layers that make context available, governed, and current.
 4. **October 13 — [Agents Don’t Really Talk. They Exchange Context.](/posts/agents-exchange-context/)**  
    What multi-agent workflows actually share, and why the handoff is the architecture.

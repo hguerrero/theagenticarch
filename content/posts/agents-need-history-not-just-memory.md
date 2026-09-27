@@ -64,4 +64,4 @@ Then test a real failure: a tool succeeds but the response is lost; an approval 
 
 Memory helps an agent be useful in the moment. History helps the organization trust it over time.
 
-*Part of [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/). Next: [Events Are APIs Too.](/posts/events-are-apis-too/)*
+*Next: [Events Are APIs Too.](/posts/events-are-apis-too/)*

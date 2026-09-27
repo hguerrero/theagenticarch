@@ -62,4 +62,4 @@ Those questions turn a firehose into a dependable part of an agentic system.
 
 The future of integration will not be APIs *or* events. It will be an architecture where both are discoverable, governable products—and where agents can use each at the right moment.
 
-*This concludes [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/).* 
+*Related: [Your AI Agent Needs a History, Not Just a Memory.](/posts/agents-need-history-not-just-memory/)*

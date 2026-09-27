@@ -1,5 +1,6 @@
 ---
-title: 'Building the Context Mesh'
+title: 'Building the Context Layer'
+aliases: ['/posts/building-the-context-mesh/']
 date: 2026-10-06
 draft: false
 description: 'A practical architecture for connecting agents to APIs, events, knowledge, and controls without creating another centralized bottleneck.'
@@ -10,7 +11,7 @@ Once an organization accepts that agents need governed, current context, the nex
 
 The answer is not an all-powerful agent platform that absorbs every system. It is a set of layers that make existing capabilities usable in a new way. The goal is to preserve domain ownership while giving agents a safe, observable path to information and action.
 
-Think of the context mesh as connective tissue rather than a replacement for the systems that already hold the truth.
+Think of the context layer as connective tissue rather than a replacement for the systems that already hold the truth.
 
 ## Start with the sources of truth
 
@@ -18,7 +19,7 @@ Most enterprises already have the raw materials. Operational systems hold the cu
 
 The gap is usually not the absence of data. It is that these assets were designed for people and applications with prior knowledge of where to look. They are inconsistent to discover, difficult to combine, and governed differently from one another.
 
-The mesh does not copy all of this into one place. It creates dependable ways to find, retrieve, and act on it.
+The context layer does not copy all of this into one place. It creates dependable ways to find, retrieve, and act on it.
 
 ## The layers
 
@@ -63,6 +64,6 @@ This is enough to create a foundation that can be reused. Broad access and auton
 
 Agent experiences often look simple from the outside: a request, a response, perhaps a few actions taken in the background. But the product people trust is the architecture that makes the response grounded, the action authorized, and the result explainable.
 
-That is what the context mesh provides: not more data, but a disciplined route from intent to reliable action.
+That is what the context layer provides: not more data, but a disciplined route from intent to reliable action.
 
-*Part of [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/). Next: [Agents Don’t Really Talk. They Exchange Context.](/posts/agents-exchange-context/)*
+*Next: [Agents Don’t Really Talk. They Exchange Context.](/posts/agents-exchange-context/)*

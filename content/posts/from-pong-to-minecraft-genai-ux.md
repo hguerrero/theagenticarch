@@ -4,6 +4,9 @@ date: 2026-08-20
 draft: false
 description: 'Generative AI shifts enterprise software from predefined workflows to intent-driven experiences—and makes architecture the foundation of UX.'
 tags: ['agents', 'architecture', 'generative-ai', 'user-experience', 'apis']
+cover:
+  image: '/images/from-pong-to-minecraft-genai-ux/cover.png'
+  alt: 'From Pong to Minecraft: How GenAI Is Redefining the User Experience — fixed rules evolving into more paths, then into blocks you build'
 ---
 
 For decades, enterprise software has worked roughly the same way.
@@ -55,6 +58,8 @@ If two systems needed to work together, someone had to integrate them.
 
 The workflow diagram was still the boundary of what was possible.
 
+![Diagram of three generations of software experience: Pong's fixed transactions, Mario Bros' more screens and paths still designed in advance, and Minecraft's primitives and environment where you decide what to build](/images/from-pong-to-minecraft-genai-ux/fig-1-three-generations.png)
+
 ## Welcome to Minecraft
 
 Minecraft changed the relationship between the player and the software.
@@ -82,6 +87,8 @@ They describe the outcome they want.
 The system figures out how to get there.
 
 That's a fundamentally different user experience.
+
+![Diagram of an intent flowing to an agent that figures out how, drawing on a CRM, contract system, incident platform, analytics, and internal APIs to produce a summary](/images/from-pong-to-minecraft-genai-ux/fig-2-intent-to-capabilities.png)
 
 ## The interface is no longer the application
 
@@ -130,6 +137,8 @@ They will have a **machine-accessible foundation for their business**.
 APIs become the building blocks. Events become signals. MCP and other emerging protocols become ways for agents to discover and interact with capabilities. Identity and authorization determine what an agent is allowed to do. Governance determines what it should be allowed to do. And context connects all of those capabilities to the user's intent.
 
 The architecture underneath the experience suddenly matters as much as the experience itself.
+
+![Diagram of a machine-accessible foundation for the business: user intent connected through context to APIs, events, MCP and protocols, identity and authz, and governance](/images/from-pong-to-minecraft-genai-ux/fig-3-machine-accessible-foundation.png)
 
 ## From workflows to capabilities
 
@@ -230,6 +239,8 @@ The old model was:
 The emerging model looks more like:
 
 **User Intent → Agent → Capabilities → Systems**
+
+![Diagram contrasting the old model, application to workflow to user, designed in advance, with the emerging model, user intent to agent to capabilities to systems](/images/from-pong-to-minecraft-genai-ux/fig-4-old-vs-emerging-model.png)
 
 The workflow becomes dynamic. The interface becomes fluid. The application becomes less of a destination and more of an environment of capabilities.
 

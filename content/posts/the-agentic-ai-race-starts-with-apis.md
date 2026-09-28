@@ -4,6 +4,9 @@ date: 2026-09-20
 draft: false
 description: 'API infrastructure offers a strong foundation for agentic AI—but only vendors that treat agents as first-class architectural concerns will lead the transition.'
 tags: ['agents', 'architecture', 'apis', 'mcp', 'cloud-native', 'governance']
+cover:
+  image: '/images/the-agentic-ai-race-starts-with-apis/cover.png'
+  alt: 'The Agentic AI Race Starts With APIs — an agent-native layer of tools, context, delegation, and budgets built on an API heritage of identity, policy, and traffic'
 ---
 
 There is a strange debate happening in the infrastructure world right now.
@@ -52,6 +55,8 @@ It becomes:
 
 That is a very different question.
 
+![Diagram contrasting an explicit API call from a client with an agent that decides at runtime which tool to call, whether to delegate, or to do nothing at all](/images/the-agentic-ai-race-starts-with-apis/fig-1-the-question-changes.png)
+
 ## This is why APIs still matter
 
 The arrival of MCP does not make APIs obsolete. Quite the opposite: enterprise agents need APIs more than ever.
@@ -97,6 +102,8 @@ That is a connectivity problem as much as it is a data problem.
 
 The data industry has enormous expertise in storing, processing, indexing, and retrieving information. The API industry has enormous expertise in making distributed systems communicate safely. Agentic systems need both.
 
+![Diagram of the twelve things an agent actually has to do, from discovering a capability and retrieving context through delegating to another agent and producing an audit trail, showing that context is not connectivity](/images/the-agentic-ai-race-starts-with-apis/fig-2-context-is-not-connectivity.png)
+
 ## But API vendors have a problem too
 
 Having solved yesterday's problems does not automatically qualify anyone to solve tomorrow's.
@@ -113,6 +120,8 @@ An API platform thinks in terms of services, consumers, routes, and requests. An
 
 Those concepts have relationships that do not map cleanly onto traditional API abstractions. The infrastructure has to evolve—not necessarily by throwing everything away, but by being willing to rethink the core architecture.
 
+![Diagram contrasting an API platform's mental model of services, consumers, routes, and requests with an agentic platform's model of models, agents, tools, context, capabilities, tasks, decisions, sessions, delegation, and autonomous behavior](/images/the-agentic-ai-race-starts-with-apis/fig-3-mental-model.png)
+
 ## The winners will understand both worlds
 
 The most interesting companies in this space will sit somewhere between API infrastructure and AI infrastructure.
@@ -126,6 +135,8 @@ It should understand OAuth, but also agent identity and delegated authorization.
 It should understand observability, but also tool calls, reasoning boundaries, agent-to-agent interactions, and the lifecycle of an autonomous task. It should understand Kubernetes, but also understand that an agent is not simply another microservice.
 
 That combination is the opportunity.
+
+![Diagram of an agentic gateway needing both the API heritage — REST, OAuth, rate limiting, HTTP, observability, Kubernetes — and the AI-native evolution built on top of it](/images/the-agentic-ai-race-starts-with-apis/fig-4-both-worlds.png)
 
 ## The cloud-native connection is not accidental
 

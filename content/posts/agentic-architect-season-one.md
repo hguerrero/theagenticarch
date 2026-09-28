@@ -4,6 +4,9 @@ date: 2026-11-03
 draft: false
 description: 'A six-week series on the architecture beneath useful, trustworthy AI agents: APIs, events, context, memory, and control.'
 tags: ['agents', 'architecture', 'context', 'apis', 'events']
+cover:
+  image: '/images/agentic-architect-season-one/cover.png'
+  alt: 'The Agentic Architect: Season 1 — six essays orbiting a central AI hub'
 ---
 
 Everyone is talking about agents. This first season focused on the architecture underneath them.
@@ -11,6 +14,8 @@ Everyone is talking about agents. This first season focused on the architecture 
 Over six weeks, **The Agentic Architect** explored the infrastructure that connects agents to the real world: APIs, events, context, memory, tools, and other agents. This was not a series about finding the perfect model. It was about building systems that can make a capable model useful and safe to trust.
 
 The series starts from a simple observation: intelligence is only one part of an agentic system. An agent also needs timely information, well-designed capabilities, clear authority, a reliable record of what happened, and controls that continue to work when the path through a task is not known in advance.
+
+![Intelligence is only one part of the system: the model also needs timely information, well-designed capabilities, clear authority, a reliable record, and controls that work off the known path](/images/agentic-architect-season-one/fig-1-more-than-a-model.png)
 
 ## The series
 
@@ -30,3 +35,5 @@ The series starts from a simple observation: intelligence is only one part of an
 Each essay stands on its own. Together, they make the case for a different starting point for enterprise AI: begin with the capabilities, context, and controls that allow intelligence to participate responsibly in the business.
 
 Season 1 begins with the plumbing and ends with events as dependable products. The ideas are designed to be read independently, but the sequence is deliberate: capabilities need context; context needs reliable handoffs and history; and real-time events keep all of it connected to a changing world.
+
+![Diagram showing how the six essays connect: better plumbing leads to a context layer, to building the layer, to exchanging context, to history not memory, to events are APIs too](/images/agentic-architect-season-one/fig-2-how-the-essays-connect.png)

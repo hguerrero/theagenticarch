@@ -5,6 +5,9 @@ date: 2026-10-06
 draft: false
 description: 'A practical architecture for connecting agents to APIs, events, knowledge, and controls without creating another centralized bottleneck.'
 tags: ['agents', 'architecture', 'context', 'apis', 'events', 'governance']
+cover:
+  image: '/images/building-the-context-layer/cover.png'
+  alt: 'Building the Context Layer — capability, context, event, control, and evidence layers stacked beneath an agent, on top of existing sources of truth'
 ---
 
 Once an organization accepts that agents need governed, current context, the next question is unavoidable: what do we actually build?
@@ -35,6 +38,8 @@ The context layer does not copy all of this into one place. It creates dependabl
 
 These layers may be implemented with different technologies. Their value is in the contracts between them.
 
+![Diagram of the layers connecting agents to existing sources of truth: a capability layer, context layer, event layer, and control layer, with an evidence layer alongside](/images/building-the-context-layer/fig-1-layers.png)
+
 ## The Backend for Agents pattern
 
 One useful design choice is to place a purpose-built boundary between agents and the enterprise. Call it a backend for agents, an agent access layer, or something else—the name matters less than the responsibility.
@@ -44,6 +49,8 @@ This boundary translates curated business capabilities into interfaces an agent 
 For example, an agent that needs to help a customer does not need unrestricted access to every customer, order, billing, and logistics operation. It needs a few composed capabilities such as “get service case context,” “propose eligible resolution,” and, with appropriate authority, “execute approved resolution.”
 
 That boundary reduces prompt complexity and dramatically reduces the blast radius of a mistake.
+
+![Diagram of the backend-for-agents pattern: an agent calling a few composed capabilities that translate internally into scoped customer, order, billing, and logistics operations](/images/building-the-context-layer/fig-2-backend-for-agents.png)
 
 ## A first implementation path
 
@@ -59,6 +66,8 @@ Then build the narrowest useful path:
 6. Test failure, revocation, stale context, and duplicate action—not only the happy path.
 
 This is enough to create a foundation that can be reused. Broad access and autonomous execution can be earned through evidence, rather than assumed at launch.
+
+![Diagram of the six-step first implementation path, from publishing read-only context to testing failure and revocation, with autonomy earned through evidence](/images/building-the-context-layer/fig-3-first-path.png)
 
 ## Architecture is the product
 

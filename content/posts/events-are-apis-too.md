@@ -4,6 +4,9 @@ date: 2026-10-27
 draft: false
 description: 'Event streams are business products, not an ungoverned firehose. Treating them like APIs makes real-time context usable for people, applications, and agents.'
 tags: ['agents', 'architecture', 'events', 'apis', 'governance', 'kafka']
+cover:
+  image: '/images/events-are-apis-too/cover.png'
+  alt: 'Events Are APIs Too — an OrderShipped event product, versioned and owned, flowing from a raw topic to agents and applications'
 ---
 
 APIs made business capabilities reusable. A well-designed API has an owner, a contract, documentation, access controls, a lifecycle, and consumers who can depend on it.
@@ -23,6 +26,8 @@ An API request asks a system to do something or returns a current representation
 That promise is only useful if people can trust it. A topic name alone is not enough. Consumers need to know who owns the event, whether it is complete, what each field means, how long it will be retained, how changes are introduced, and what access they have.
 
 These are familiar API-product questions. They should be familiar event-product questions too.
+
+![Diagram contrasting a request-response API call with an event: a business fact like OrderShipped that can update a customer experience, trigger a workflow, feed an operational model, or invalidate an agent's context](/images/events-are-apis-too/fig-1-request-vs-event.png)
 
 ## Why agents make the gap visible
 
@@ -46,11 +51,15 @@ The answer is not to hide events from agents. It is to publish event products de
 
 **Observability and lifecycle.** Teams need to see usage, lag, failures, and unusual consumption. They need a way to deprecate, migrate, and retire events without leaving invisible dependencies behind.
 
+![Diagram of turning a raw firehose topic into a governed event product with clear ownership, a versioned contract, discoverability, purpose-based access, and observability](/images/events-are-apis-too/fig-2-event-product.png)
+
 ## Design for both pull and push
 
 APIs and events are complements. An agent may pull a customer record to understand the current state, then subscribe to or receive a relevant event because the state changed. A task may call an API to initiate a workflow and emit events as it progresses.
 
 Trying to force everything into synchronous calls loses timeliness. Trying to force everything into streams makes simple queries needlessly complex. The architectural skill is choosing the right interaction model, then applying consistent product discipline to both.
+
+![Sequence diagram of an agent pulling a customer record, receiving a pushed event when state changes, then pulling again to start a workflow that pushes progress events back](/images/events-are-apis-too/fig-3-pull-and-push.png)
 
 ## Start with the events people already depend on
 

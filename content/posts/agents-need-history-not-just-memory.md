@@ -4,6 +4,9 @@ date: 2026-10-20
 draft: false
 description: 'Current state and semantic memory are useful, but a durable ordered history is what makes agent decisions explainable and recoverable.'
 tags: ['agents', 'architecture', 'memory', 'events', 'observability', 'governance']
+cover:
+  image: '/images/agents-need-history-not-just-memory/cover.png'
+  alt: 'Your AI Agent Needs a History, Not Just a Memory — an append-only ordered log of task events beside a memory cloud that projects from it'
 ---
 
 When an agent gets something wrong, teams often inspect its final answer and the context retrieved for the last model call. That can explain what the agent believed at the end. It rarely explains how it got there.
@@ -14,6 +17,8 @@ An agent needs memory: relevant knowledge from past interactions, retrieved docu
 
 Reliable agents need both.
 
+![Diagram contrasting memory, which asks what should I recall now, with history, an append-only ordered log that asks what happened, in what order, and why](/images/agents-need-history-not-just-memory/fig-1-memory-vs-history.png)
+
 ## Snapshots hide the path
 
 A database record can tell you an order is cancelled. A vector index can retrieve a relevant support article. A session store can show the current plan. All are valuable views of the world.
@@ -23,6 +28,8 @@ None necessarily tells you that the agent first checked eligibility, then receiv
 That sequence is not incidental metadata. It is the explanation of the outcome.
 
 If an agent can call tools, make decisions, and change business state, its task should create an ordered record of the important things that happened. This record is often called a durable commit log, event history, or execution journal. The label matters less than the properties: it is append-only, ordered, attributable, and retained independently of the agent’s short-term context.
+
+![Diagram showing a snapshot that reads only "cancelled" beside the ordered history of events — eligibility checked, a shipping-delay event, an approval, a timeout, a retry — that explains how the order reached that state](/images/agents-need-history-not-just-memory/fig-2-snapshot-vs-path.png)
 
 ## What belongs in the history
 
@@ -55,6 +62,8 @@ This leads to a useful architectural principle: treat fast memory stores as proj
 An agent may retrieve a compact summary of prior activity because it is efficient. Another system may build a semantic index over resolved cases. A dashboard may show the current status of a task. These are all views optimized for a purpose. They can be updated, rebuilt, or corrected when the durable record remains available.
 
 This does not mean every piece of knowledge needs event sourcing. It means that for decisions and actions with material consequences, a mutable snapshot alone is an inadequate operational record.
+
+![Diagram of a durable, append-only history feeding three projections: a compact summary, a semantic index, and a task dashboard, each rebuildable from the log](/images/agents-need-history-not-just-memory/fig-3-projections.png)
 
 ## Design the journal with the workflow
 

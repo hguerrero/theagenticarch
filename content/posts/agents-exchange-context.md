@@ -4,6 +4,9 @@ date: 2026-10-13
 draft: false
 description: 'Multi-agent systems are context-distribution systems. Reliable handoffs need contracts, ownership, and evidence—not conversational improvisation.'
 tags: ['agents', 'architecture', 'context', 'multi-agent', 'governance']
+cover:
+  image: '/images/agents-exchange-context/cover.png'
+  alt: 'Agents Don’t Really Talk. They Exchange Context — two agents connected by a handoff, not a chat bubble'
 ---
 
 Multi-agent demos make it look as though agents are having a conversation: one delegate asks another for research, a specialist returns an answer, and an orchestrator turns it into action.
@@ -23,6 +26,8 @@ This creates two fundamental operations:
 
 The first operation needs relevance, freshness, and provenance. The second needs authority, validation, idempotency, and an audit trail. Treating both as “messages between agents” hides the questions that actually matter.
 
+![Diagram of the two handoff operations: retrieval needs relevance, freshness, and provenance; mutation needs authority, validation, idempotency, and an audit trail](/images/agents-exchange-context/fig-1-retrieval-vs-mutation.png)
+
 ## Pass references, not a pile of prompt text
 
 Copying large, raw payloads from one context window into another is tempting. It is also fragile. The payload may be stale, incomplete, sensitive, or too large. It loses the connection to the system that owns the fact and makes revocation difficult.
@@ -30,6 +35,8 @@ Copying large, raw payloads from one context window into another is tempting. It
 Where possible, a handoff should contain structured task state and references to authoritative context. The receiving agent can retrieve the specific information it is allowed to use, with the applicable identity and policy. This keeps the source of truth in control and creates a record of what was actually read.
 
 There are exceptions: a concise, structured summary can be a valuable artifact when it records what an agent learned or decided. But it should be treated as a versioned output with an owner and a purpose—not as an invisible fragment of a conversation.
+
+![Diagram contrasting copying a raw payload between agents with passing a reference to task state and a source of truth](/images/agents-exchange-context/fig-2-references.png)
 
 ## Define the handoff contract
 
@@ -44,6 +51,8 @@ A good handoff is closer to an API contract than a chat message. At minimum, def
 - the failure and escalation behavior.
 
 This may sound formal, but it is what lets a workflow scale beyond a single demonstration. Without these contracts, each new agent becomes another place where assumptions accumulate.
+
+![Diagram of a handoff contract with task, output, context, authority, actions, trace, and failure fields defined between agent A and agent B](/images/agents-exchange-context/fig-3-handoff-contract.png)
 
 ## Keep responsibility clear
 

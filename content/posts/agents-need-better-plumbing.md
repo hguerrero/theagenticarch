@@ -4,6 +4,9 @@ date: 2026-09-22
 draft: false
 description: 'Agentic systems usually fail at the integration layer: context, capabilities, identity, and controls—not at the model.'
 tags: ['agents', 'architecture', 'apis', 'governance', 'context']
+cover:
+  image: '/images/agents-need-better-plumbing/cover.png'
+  alt: 'Your Agents Don’t Need Better Models. They Need Better Plumbing — a model sitting atop APIs, events, identity, and records, with stale data dripping through'
 ---
 
 There is a familiar pattern in enterprise AI projects.
@@ -15,6 +18,8 @@ Eventually someone asks the question that should have come first: **why does the
 Often, the model is not the answer.
 
 The plumbing is.
+
+![Diagram of the prototype loop: start with a model, tweak the prompt, add retrieval, try a bigger model or a new framework, and repeat — while the real issue is the plumbing: context, capabilities, identity, controls, and evidence](/images/agents-need-better-plumbing/fig-1-prototype-loop.png)
 
 ## We improved intelligence faster than integration
 
@@ -32,6 +37,8 @@ That difference exposes weaknesses that ordinary applications can sometimes hide
 
 Putting a better model on top of those conditions gives the organization a more articulate way to encounter them. It does not remove them.
 
+![Diagram contrasting deterministic software, where the route is known in advance, with an agent, whose route is discovered while it runs](/images/agents-need-better-plumbing/fig-2-app-vs-agent.png)
+
 ## An agent needs a working environment
 
 Useful agents require more than a context window. They need an environment with a few dependable properties.
@@ -47,6 +54,8 @@ Useful agents require more than a context window. They need an environment with 
 **Operational evidence.** Teams need a trace across model calls, tool calls, decisions, events, and writes. A final answer is not an audit trail.
 
 These are integration and platform concerns. They are the connective tissue between an agent and the enterprise.
+
+![Diagram of an agent surrounded by the five properties of a working environment: discoverable capabilities, grounded current context, identity and authority, controls at the point of action, and operational evidence](/images/agents-need-better-plumbing/fig-3-working-environment.png)
 
 ## The difference between a demo and a system
 

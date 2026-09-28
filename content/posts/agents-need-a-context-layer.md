@@ -5,6 +5,9 @@ date: 2026-09-29
 draft: false
 description: 'Traditional integration moves data along predetermined paths. Agentic systems need a governed context layer that can be discovered and assembled at runtime.'
 tags: ['agents', 'architecture', 'context', 'integration', 'governance']
+cover:
+  image: '/images/agents-need-a-context-layer/cover.png'
+  alt: 'iPaaS Was Built for Applications. Agents Need a Context Layer — a context layer connecting an agent to records, APIs, events, documents, policies, and task state'
 ---
 
 Integration platforms earned their place in the enterprise by solving a real problem: connect known systems through known flows. An order enters one application, a record is updated in another, and a workflow moves data from point A to point B according to rules someone designed.
@@ -33,6 +36,8 @@ The context layer exists so an agent can answer three questions reliably:
 
 Traditional integration is often a fixed pipe. A context layer is a governed environment for dynamic work.
 
+![Diagram contrasting a fixed pipe between applications with a governed context layer assembled at runtime under policy](/images/agents-need-a-context-layer/fig-1-pipe-vs-layer.png)
+
 ## Why predetermined flows fall short
 
 Imagine a service agent asked to resolve a delayed shipment for a high-value customer. A conventional workflow might retrieve an order, check tracking, and open a case. An agent may need to do more: inspect the customer’s service tier, identify a disruption event, compare inventory at nearby locations, check policy constraints, propose remedies, and seek approval before issuing credit.
@@ -40,6 +45,8 @@ Imagine a service agent asked to resolve a delayed shipment for a high-value cus
 The route changes with the facts. The architecture must support retrieval and action without pretending that every possible path can be modeled in advance.
 
 That does not mean abandoning workflow. It means placing workflow where it belongs: as one kind of capability an agent can invoke, especially when a process must be deterministic. The agent can decide that a refund workflow is appropriate; the workflow should still execute with its own checks and guarantees.
+
+![Diagram of resolving a delayed shipment: checking service tier, finding the disruption event, comparing nearby inventory, and checking policy constraints before proposing remedies and requesting approval](/images/agents-need-a-context-layer/fig-2-delayed-shipment.png)
 
 ## Four properties of a useful context layer
 
@@ -50,6 +57,8 @@ That does not mean abandoning workflow. It means placing workflow where it belon
 **Policy-aware access.** Context is not neutral. A customer’s record, a pricing rule, and an operational event carry different sensitivities. The context layer should apply identity, delegated authority, data rules, and purpose constraints before information reaches the agent.
 
 **Traceable composition.** When an answer or action matters, teams must know which sources contributed to it, which tools were called, and what changed. The context layer should make provenance normal, not a forensic exercise.
+
+![Diagram of the four properties of a useful context layer: curated discovery, freshness, policy-aware access, and traceable composition](/images/agents-need-a-context-layer/fig-3-four-properties.png)
 
 ## Build it incrementally
 

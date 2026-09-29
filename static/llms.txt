@@ -1,0 +1,26 @@
+# The Agentic Architect
+
+> The Agentic Architect is a technical blog by Hugo Guerrero about the architecture patterns that make AI agents useful, safe, and trustworthy in production: APIs, MCP, events, context, memory, identity, and governance.
+
+The site argues that agent quality is bounded less by model choice than by the surrounding architecture — discoverable capabilities, governed and current context, identity and authorization, durable history, and controls enforced at the point of action. Content is written for architects, API and platform teams, product leaders, and builders moving from AI demos to durable systems.
+
+## Essays
+
+- [Welcome to The Agentic Architect](https://theagenticarch.com/posts/hello-agentic-arch/): Introduces the site's premise — agentic systems win on trustworthy, discoverable capabilities, not the cleverest prompt.
+- [From Pong to Minecraft: How GenAI Is Redefining the User Experience](https://theagenticarch.com/posts/from-pong-to-minecraft-genai-ux/): Generative AI shifts enterprise software from predefined workflows to intent-driven experiences, making architecture the foundation of UX.
+- [The Agentic AI Race Starts With APIs](https://theagenticarch.com/posts/the-agentic-ai-race-starts-with-apis/): API infrastructure is a strong foundation for agentic AI, but only vendors that treat agents as first-class architectural concerns will lead the transition.
+- [Your Agents Don't Need Better Models. They Need Better Plumbing.](https://theagenticarch.com/posts/agents-need-better-plumbing/): Agentic systems usually fail at the integration layer — context, capabilities, identity, and controls — not at the model.
+- [iPaaS Was Built for Applications. Agents Need a Context Layer.](https://theagenticarch.com/posts/agents-need-a-context-layer/): Traditional integration moves data along predetermined paths; agentic systems need a governed context layer discovered and assembled at runtime.
+- [Building the Context Layer](https://theagenticarch.com/posts/building-the-context-layer/): A practical architecture — capability, context, event, control, and evidence layers — for connecting agents to APIs, events, and knowledge without a centralized bottleneck.
+- [Agents Don't Really Talk. They Exchange Context.](https://theagenticarch.com/posts/agents-exchange-context/): Multi-agent systems are context-distribution systems; reliable handoffs need contracts, ownership, and evidence, not conversational improvisation.
+- [Your AI Agent Needs a History, Not Just a Memory.](https://theagenticarch.com/posts/agents-need-history-not-just-memory/): Current state and semantic memory are useful, but a durable ordered history is what makes agent decisions explainable and recoverable.
+- [Events Are APIs Too](https://theagenticarch.com/posts/events-are-apis-too/): Event streams are business products, not an ungoverned firehose; treating them like APIs makes real-time context usable for agents.
+- [The Agentic Architect: Season 1](https://theagenticarch.com/posts/agentic-architect-season-one/): A recap of the six-week series on the architecture beneath useful, trustworthy AI agents — APIs, events, context, memory, and control.
+
+## About
+
+- [About Hugo Guerrero and The Agentic Architect](https://theagenticarch.com/about/): Author background and the site's focus on agent design, APIs/events/MCP, and the identity, authorization, and governance controls that make agentic systems trustworthy.
+
+## Optional
+
+- [Privacy Policy](https://theagenticarch.com/privacy/): Analytics, cookies, and data handling.

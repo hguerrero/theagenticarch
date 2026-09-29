@@ -76,4 +76,18 @@ It becomes, “How do we make the right business context and capabilities availa
 
 That is a bigger question. It is also the one agents force us to confront.
 
+## Frequently asked questions
+
+### What is a context layer?
+
+A context layer is the architectural layer that makes trustworthy context—records, APIs, events, documents, policies, and task state—available to an agent at the moment it needs it, while preserving meaning, ownership, identity, and control. It is not a single database, a giant prompt, or open access to everything.
+
+### How is a context layer different from an iPaaS or integration platform?
+
+Traditional integration platforms move data along predetermined paths that an application knows in advance. Agents don't have that luxury: they start with an objective and assemble what they need at runtime. A context layer is a governed environment for that dynamic work, not a fixed pipe between known systems.
+
+### Does adopting a context layer mean abandoning existing workflows?
+
+No. Workflow still matters for processes that must be deterministic—it just becomes one capability an agent can invoke rather than the only path through a task. An agent can decide a refund workflow is appropriate; the workflow itself still executes with its own checks and guarantees.
+
 *Next: [Building the Context Layer.](/posts/building-the-context-layer/)*

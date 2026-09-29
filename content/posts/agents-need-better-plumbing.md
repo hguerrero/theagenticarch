@@ -85,4 +85,18 @@ That is the plumbing.
 
 And it is where agentic architecture begins.
 
+## Frequently asked questions
+
+### Why do AI agents fail in production after succeeding in a demo?
+
+Demos usually run against a single, well-prepared context and a narrow tool path. Production has to handle revoked access, partial failures, concurrent changes, slow dependencies, and requests that fall outside the happy path. Those are integration and platform failures, not model failures—so swapping in a bigger model rarely fixes them.
+
+### What does an agent's "working environment" need to include?
+
+Five dependable properties: discoverable, business-level capabilities; grounded and current context; identity and authority attached to every action; controls enforced at the point of action, not just described afterward; and operational evidence—a trace across model calls, tool calls, and decisions.
+
+### Should we fix the plumbing everywhere at once, or start small?
+
+Start with one bounded, valuable workflow and make its full path trustworthy: curated tools, authoritative context, scoped identity, approvals on consequential actions, and captured evidence. That creates a reusable pattern other workflows can follow, instead of another isolated pilot.
+
 *Next: [iPaaS Was Built for Applications. Agents Need a Context Layer.](/posts/agents-need-a-context-layer/)*

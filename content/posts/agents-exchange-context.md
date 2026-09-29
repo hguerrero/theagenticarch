@@ -70,4 +70,18 @@ Those are context and control questions. Solve them well, and additional agents 
 
 The right mental model is simple: multi-agent systems are **context distribution systems with decision-makers attached**. Design the distribution carefully.
 
+## Frequently asked questions
+
+### Do agents actually communicate through natural language?
+
+Not in any way that matters architecturally. What looks like conversation between agents is really a handoff of task state, facts, references, and authority. The reliability of a multi-agent workflow depends on how well that handoff is structured, not on how fluent the exchanged text sounds.
+
+### Should agents pass full context or references between each other?
+
+Prefer references to authoritative context over copying raw payloads. A large pasted context can be stale, incomplete, sensitive, or oversized, and it severs the connection to the system that owns the fact. A receiving agent should retrieve what it's authorized to use, under its own identity and policy, which also creates a record of what was actually read.
+
+### What should a handoff contract between agents define?
+
+At minimum: the task identifier and objective, the expected output and completion condition, context references and freshness requirements, identity and delegated authority, permitted actions and approval boundaries, correlation and trace identifiers, and failure or escalation behavior. Treat it like an API contract, not a chat message.
+
 *Next: [Your AI Agent Needs a History, Not Just a Memory.](/posts/agents-need-history-not-just-memory/)*

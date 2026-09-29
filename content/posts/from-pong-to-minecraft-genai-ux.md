@@ -261,3 +261,19 @@ That is a much bigger architectural question.
 And it is one we'll be exploring here.
 
 Welcome to **The Agentic Architect**.
+
+## Frequently asked questions
+
+### What does "GenAI is redefining the user experience" actually mean?
+
+It means the interface is no longer the product. Instead of navigating a workflow someone designed in advance, users state an intent, and a system built from discoverable capabilities, context, and controls figures out how to satisfy it. The shift moves UX from an interaction-design problem to an architecture problem.
+
+### Why isn't chat itself the transformation?
+
+Chat is just one surface for expressing intent; the same underlying capability could power voice, an embedded copilot, or an autonomous agent. The real change is what sits behind the interface: whether the system can discover capabilities, retrieve the right context, and act within policy—regardless of how the request arrives.
+
+### If intelligence isn't the bottleneck, what is?
+
+The organization's machine-accessible foundation. An intelligent model paired with inconsistent, poorly documented, hard-to-govern APIs is still a limited agent. The advantage goes to organizations whose capabilities, events, identity, and governance are already agent-accessible, not to whoever has access to the newest model.
+
+*Next: [The Agentic AI Race Starts With APIs](/posts/the-agentic-ai-race-starts-with-apis/)*

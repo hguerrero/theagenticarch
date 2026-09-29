@@ -73,4 +73,18 @@ Then test a real failure: a tool succeeds but the response is lost; an approval 
 
 Memory helps an agent be useful in the moment. History helps the organization trust it over time.
 
+## Frequently asked questions
+
+### What's the difference between an agent's memory and its history?
+
+Memory answers "what should I recall now?"—relevant knowledge, retrieved documents, and working state for the current task. History answers "what happened, in what order, and why did the system reach this state?" A snapshot can tell you an order is cancelled; only an ordered history explains the eligibility check, the delay event, the approval, and the retry that led there.
+
+### What should be captured in an agent's durable history?
+
+Task creation and initiating identity; context sources consulted with their versions and freshness; tool calls, inputs, outputs, and failures; policy evaluations and approval decisions; state mutations and idempotency keys; and completion, escalation, or cancellation. Sensitive payloads can be redacted or referenced—the goal is accountable operation, not capturing every generated token.
+
+### Does every agent action need event sourcing?
+
+No. The principle is to treat fast memory stores—summaries, semantic indexes, dashboards—as projections that can be rebuilt from a durable log where one exists, not as the only record. Full event-sourcing discipline matters most for decisions and actions with material consequences; a mutable snapshot alone is inadequate for those, but not every piece of agent knowledge needs it.
+
 *Next: [Events Are APIs Too.](/posts/events-are-apis-too/)*

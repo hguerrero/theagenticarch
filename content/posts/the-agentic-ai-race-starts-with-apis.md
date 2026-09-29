@@ -225,3 +225,19 @@ The API industry already knows a lot about connectivity.
 Now it needs to learn how to connect **agents**.
 
 And that is a very different problem.
+
+## Frequently asked questions
+
+### Are API gateways becoming AI gateways?
+
+Some are evolving that way, but adding an LLM plugin, token counting, and an MCP proxy to an existing gateway is not enough on its own. The real shift is the mental model: an agentic platform has to reason about models, agents, tools, context, and delegation—not just services, consumers, routes, and requests.
+
+### Does MCP replace the need for APIs?
+
+No. Most enterprise capabilities an agent needs—payments, orders, customers, inventory, identity—already exist as APIs, and rewriting them as agent-native systems overnight isn't realistic or necessary. MCP changes how those capabilities are discovered and invoked by a model; the API foundation underneath still has to provide identity, policy, and observability.
+
+### Why would API infrastructure vendors have an advantage over data infrastructure vendors in agentic AI?
+
+Because agents ultimately have to touch the enterprise, and touching the enterprise means connectivity: authentication, authorization, routing, policy, and observability. The data industry understands storing and retrieving information; the API industry understands making distributed systems communicate safely. Agentic systems need both, but the advantage only holds if API vendors rethink the architecture rather than bolt AI onto it.
+
+*Next: [Your Agents Don't Need Better Models. They Need Better Plumbing.](/posts/agents-need-better-plumbing/)*

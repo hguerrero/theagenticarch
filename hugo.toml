@@ -33,6 +33,25 @@ buildExpired = false
   hideScrollbar = false
   mainSections = ['posts']
 
+  # Fallback image for og:image / twitter:image / schema "image" on pages
+  # without their own cover (homepage, About, Archive, Privacy).
+  images = ['/theagenticarch-logo.png']
+
+  # Homepage <meta name="keywords">.
+  keywords = ['agentic AI', 'AI agents', 'agent architecture', 'AI gateway', 'API gateway', 'MCP', 'model context protocol', 'context engineering', 'event-driven architecture', 'AI governance']
+
+  [params.schema]
+    # sameAs entities for the site's Organization JSON-LD (excludes the RSS
+    # feed link, which is not a profile URL and shouldn't be listed here).
+    sameAs = [
+      'https://github.com/hguerrero',
+      'https://linkedin.com/in/hugoguerrero',
+      'https://www.instagram.com/theagenticarch/',
+      'https://www.youtube.com/@theagenticarch',
+      'https://www.tiktok.com/@theagenticarch',
+      'https://www.facebook.com/profile.php?id=61592474153825',
+    ]
+
   [params.assets]
     favicon = '/theagenticarch-logo-32.png'
     favicon16x16 = '/theagenticarch-logo-16.png'

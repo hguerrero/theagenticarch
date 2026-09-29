@@ -71,4 +71,19 @@ Those questions turn a firehose into a dependable part of an agentic system.
 
 The future of integration will not be APIs *or* events. It will be an architecture where both are discoverable, governable products—and where agents can use each at the right moment.
 
+## Frequently asked questions
+
+### Why should event streams be treated like API products?
+
+Because once a stream is valuable to more than one consumer—or to an agent that needs timely context—an undocumented topic understood only by its producing team stops being adequate. A well-treated event has an owner, a versioned contract, discoverability, purpose-based access, and observability, the same way a well-designed API does.
+
+### What does a "governed event product" require?
+
+Five things: clear ownership by a domain team, a versioned schema contract with a compatibility policy, discoverability through a catalog that explains meaning and sensitivity, purpose-based access rather than authentication alone, and observability into usage, lag, and failures so events can be deprecated safely.
+
+### Should agents pull context from APIs or subscribe to events?
+
+Both, depending on the moment. An agent typically pulls an API to understand current state, then relies on an event to learn that the state has changed—a shipping disruption, a fraud signal, a price change. Forcing everything into synchronous calls loses timeliness; forcing everything into streams makes simple queries needlessly complex.
+
 *Related: [Your AI Agent Needs a History, Not Just a Memory.](/posts/agents-need-history-not-just-memory/)*
+*Next: [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/)*

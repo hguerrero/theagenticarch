@@ -28,3 +28,17 @@ This is for architects, API and platform teams, product leaders, and builders wh
 The first substantive essay, [From Pong to Minecraft: How GenAI Is Redefining the User Experience](/posts/from-pong-to-minecraft-genai-ux/), lays out the central shift: the next generation of software is built around user intent and composable capabilities, not just predefined workflows.
 
 This is a living set of notes. The goal is not to chase every new model release, but to understand the architectural patterns that let intelligent systems become genuinely useful.
+
+## Frequently asked questions
+
+### What is The Agentic Architect about?
+
+It's a blog about the architecture underneath useful, trustworthy AI agents—APIs, events, MCP, context, memory, identity, and governance—rather than model selection or prompt engineering. The premise is that a capable model without the right context, tools, and controls is still a limited agent.
+
+### Who is The Agentic Architect written for?
+
+Architects, API and platform teams, product leaders, and builders who are moving from AI demos to durable, production systems, and who want to connect the technical foundations of the enterprise to the emerging ways agents can use them.
+
+### Where should I start reading?
+
+Start with [From Pong to Minecraft: How GenAI Is Redefining the User Experience](/posts/from-pong-to-minecraft-genai-ux/), which lays out the central shift this site explores, or jump to [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/) for a guided recap of the first six essays on agent architecture.

@@ -75,4 +75,18 @@ Agent experiences often look simple from the outside: a request, a response, per
 
 That is what the context layer provides: not more data, but a disciplined route from intent to reliable action.
 
+## Frequently asked questions
+
+### What layers make up a context layer architecture?
+
+Five: a capability layer that publishes task-oriented tools and workflows; a context layer for authoritative records and task state; an event layer for time-sensitive changes; a control layer that enforces authentication, authorization, and budgets; and an evidence layer that records what happened. They can use different technologies—the value is in the contracts between them.
+
+### What is a "backend for agents"?
+
+A purpose-built boundary between agents and the enterprise that translates curated business capabilities into interfaces an agent can use, hiding accidental complexity and applying policy consistently. It's the agent equivalent of a backend-for-frontend: an agent gets a few composed capabilities instead of unrestricted access to every internal endpoint.
+
+### How should a team start building a context layer?
+
+Pick one workflow where timeliness and cross-system context genuinely matter, then build the narrowest useful path: publish read-only context with freshness metadata first, add one or two strongly typed capabilities, bind every call to an identity, require approval for consequential writes, and capture an ordered task record from day one.
+
 *Next: [Agents Don’t Really Talk. They Exchange Context.](/posts/agents-exchange-context/)*

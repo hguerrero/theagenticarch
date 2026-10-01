@@ -1,0 +1,19 @@
+{{- /* "Keep reading": the two most recent other posts. */ -}}
+{{- if eq .Type "posts" }}
+{{- $self := . }}
+{{- $more := first 2 (where (where site.RegularPages "Type" "in" site.Params.mainSections) "RelPermalink" "ne" .RelPermalink) }}
+{{- with $more }}
+<aside class="keep-reading" aria-labelledby="keep-reading-title">
+  <h2 id="keep-reading-title">Keep reading</h2>
+  <div class="keep-reading-grid">
+    {{- range . }}
+    <a class="keep-reading-card" href="{{ .RelPermalink }}">
+      <span class="home-post-meta">{{ .Date.Format "January 2, 2006" }}</span>
+      <strong>{{ .Title }}</strong>
+      <span>{{ .Description }}</span>
+    </a>
+    {{- end }}
+  </div>
+</aside>
+{{- end }}
+{{- end }}

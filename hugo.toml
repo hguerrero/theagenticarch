@@ -136,7 +136,7 @@ buildExpired = false
     codeFences = true
     guessSyntax = true
     lineNos = false
-    style = 'monokai'
+    noClasses = false
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 3

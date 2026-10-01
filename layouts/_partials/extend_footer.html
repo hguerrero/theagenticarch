@@ -1,6 +1,6 @@
 {{- with site.Config.Services.GoogleAnalytics.ID }}
 <div id="consent-banner" class="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
-  <p>This site uses Google Analytics cookies to understand how readers use it. Analytics only run if you accept. <a href="{{ "privacy/" | relURL }}">Privacy policy</a></p>
+  <p>This site uses Google Analytics cookies to understand how readers use it. Analytics cookies are only set if you accept; otherwise only anonymous, cookieless measurement runs. <a href="{{ "privacy/" | relURL }}">Privacy policy</a></p>
   <div class="consent-actions">
     <button type="button" data-consent="denied">Decline</button>
     <button type="button" data-consent="granted" class="consent-accept">Accept</button>
@@ -14,10 +14,10 @@
     function choose(value) {
       try { localStorage.setItem('ga-consent', value); } catch (e) {}
       banner.hidden = true;
-      if (value === 'granted') {
-        window.loadGA && window.loadGA();
-      } else if (window.gaLoaded) {
-        // Withdrawn consent: stop tracking and drop GA cookies on next load.
+      window.setAnalyticsConsent && setAnalyticsConsent(value);
+      window.gtag && gtag('event', 'consent_choice', { choice: value });
+      if (value !== 'granted') {
+        // Withdrawn consent: drop any GA cookies already set.
         document.cookie.split(';').forEach(function (c) {
           var name = c.split('=')[0].trim();
           if (name === '_ga' || name.indexOf('_ga_') === 0) {
@@ -25,7 +25,6 @@
             document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
           }
         });
-        location.reload();
       }
     }
     banner.addEventListener('click', function (e) {
@@ -49,4 +48,7 @@
     if (!stored()) show();
   })();
 </script>
+{{- end }}
+{{- with resources.Get "js/analytics.js" | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
 {{- end }}

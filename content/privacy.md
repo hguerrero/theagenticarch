@@ -9,34 +9,42 @@ ShowPostNavLinks: false
 ShowBreadCrumbs: false
 ---
 
-_Last updated: September 20, 2026_
+_Last updated: October 1, 2026_
 
 This policy explains what data **The Agentic Architect** (theagenticarch.com) collects when you visit, why, and what control you have over it. The site is run by Hugo Guerrero, who is the data controller.
 
 ## The short version
 
 - This is a static blog. There are no accounts, comments, forms, or newsletter sign-ups.
-- Analytics run **only if you click Accept** on the cookie banner.
-- If you decline, no analytics script is loaded and no analytics cookies are set.
+- Analytics cookies are set **only if you click Accept** on the cookie banner.
+- If you decline (or ignore the banner), no analytics cookies are set and no persistent identifier is stored. The site still sends anonymous, cookieless pings to Google Analytics, described below.
 
 ## Analytics (Google Analytics 4)
 
-If you accept, the site loads Google Analytics 4, provided by Google Ireland Limited (and Google LLC in the United States). It helps me understand which articles are read and how readers find the site so I can write more useful content.
+The site uses Google Analytics 4 with Google Consent Mode, provided by Google Ireland Limited (and Google LLC in the United States). It helps me understand which articles are read and how readers find the site so I can write more useful content.
 
-With your consent, Google Analytics may collect:
+### If you accept
+
+Google Analytics may collect:
 
 - Pages viewed, time on page, scroll and click events
 - Approximate location (derived from your IP address), device type, browser, and operating system
 - The page or site that referred you
 - A random identifier stored in first-party cookies (`_ga` and `_ga_<ID>`)
 
+### If you decline
+
+Google Analytics still loads, but with all storage signals set to "denied". It sets no cookies and stores no identifier on your device. It receives only anonymous, aggregate-style pings (such as the page viewed, referrer, browser and approximate location derived from your IP address, which Google does not store), which Google may use to model overall traffic.
+
+### In both cases
+
 I do not collect your name, email address, or any other information that directly identifies you, and I do not combine analytics data with other sources. Analytics cookies typically expire after up to 14 months. Data retention in Google Analytics is limited to the period configured in my account.
 
-**Legal basis:** your consent (GDPR Art. 6(1)(a) and the ePrivacy rules on cookies). Your data may be transferred to the United States; Google relies on the EU–U.S. Data Privacy Framework and standard contractual clauses for such transfers. See [Google's privacy policy](https://policies.google.com/privacy) and [how Google uses data from sites that use its services](https://policies.google.com/technologies/partner-sites).
+**Legal basis:** your consent for cookies and identifiers (GDPR Art. 6(1)(a) and the ePrivacy rules); my legitimate interest in understanding aggregate readership for cookieless measurement. Your data may be transferred to the United States; Google relies on the EU–U.S. Data Privacy Framework and standard contractual clauses for such transfers. See [Google's privacy policy](https://policies.google.com/privacy) and [how Google uses data from sites that use its services](https://policies.google.com/technologies/partner-sites).
 
 ## Changing or withdrawing your consent
 
-You can change your choice at any time using the **Cookie settings** link in the site footer. If you switch from Accept to Decline, the analytics cookies are removed and the page reloads without analytics. Your choice is stored in your browser (local storage key `ga-consent`) so the banner does not reappear on every visit. That entry is essential to remember your preference and contains no personal data.
+You can change your choice at any time using the **Cookie settings** link in the site footer. If you switch from Accept to Decline, analytics cookies are removed and Google Analytics returns to cookieless mode. Your choice is stored in your browser (local storage key `ga-consent`) so the banner does not reappear on every visit. That entry is essential to remember your preference and contains no personal data.
 
 You can also block analytics with the [Google Analytics opt-out browser add-on](https://tools.google.com/dlpage/gaoptout) or by clearing cookies and site data in your browser.
 

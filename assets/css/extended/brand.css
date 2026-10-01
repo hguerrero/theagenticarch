@@ -1,0 +1,55 @@
+/* Brand palette derived from the logo: deep navy + electric cyan. */
+:root {
+  --accent: rgb(8, 126, 164);
+  --accent-soft: rgba(8, 126, 164, .1);
+  --code-bg: rgb(238, 244, 248);
+  --border: rgb(222, 230, 236);
+  --theme: rgb(244, 248, 251);
+  --entry: rgb(255, 255, 255);
+}
+
+:root[data-theme="dark"] {
+  --theme: rgb(10, 18, 32);
+  --entry: rgb(17, 28, 48);
+  --primary: rgb(226, 234, 242);
+  --secondary: rgb(139, 158, 178);
+  --tertiary: rgb(34, 50, 74);
+  --content: rgb(200, 212, 224);
+  --code-block-bg: rgb(17, 28, 48);
+  --code-bg: rgb(24, 38, 62);
+  --border: rgb(30, 45, 68);
+  --accent: rgb(56, 212, 255);
+  --accent-soft: rgba(56, 212, 255, .12);
+}
+
+::selection { background: var(--accent-soft); }
+
+.post-content a, .home-text-link, .home-section-heading a, .post-meta a:hover, .breadcrumbs a:hover {
+  color: var(--accent);
+}
+.post-content a { box-shadow: none; border-bottom: 1px solid var(--accent-soft); }
+.post-content a:hover { border-bottom-color: var(--accent); }
+.post-content blockquote { border-inline-start: 3px solid var(--accent); }
+.post-tags a:hover, .terms-tags a:hover { background: var(--accent-soft); color: var(--accent); }
+.toc .active { color: var(--accent); }
+.logo a { gap: .6rem; }
+.nav a.active span { border-bottom-color: var(--accent); }
+
+.home-eyebrow { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.home-hero { position: relative; }
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -30vw auto auto;
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, var(--accent-soft), transparent 65%);
+  pointer-events: none;
+  z-index: -1;
+}
+.home-button-primary { background: var(--accent); border-color: var(--accent); color: var(--theme); font-weight: 600; }
+.home-button:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--primary); }
+.home-button-primary:hover { background: var(--accent); color: var(--theme); filter: brightness(1.1); }
+.home-topic-grid article { border: 1px solid var(--border); border-top: 2px solid var(--accent); transition: transform .15s, border-color .15s; }
+.home-topic-grid article:hover { transform: translateY(-2px); border-color: var(--accent); }
+.home-post h3 a:hover, .home-featured h2 a:hover { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .home-topic-grid article { transition: none; } }

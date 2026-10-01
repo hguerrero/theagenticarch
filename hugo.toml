@@ -11,6 +11,27 @@ buildExpired = false
 [services.googleAnalytics]
   id = 'G-GRYKZ2CY32'
 
+# Mount cover images into assets/ too, so Hugo can resize them for homepage cards.
+[module]
+  [[module.mounts]]
+    source = 'static'
+    target = 'static'
+  [[module.mounts]]
+    source = 'static/images'
+    target = 'assets/images'
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+  [[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+  [[module.mounts]]
+    source = 'archetypes'
+    target = 'archetypes'
+
 [minify]
   disableXML = true
   minifyOutput = true
@@ -22,7 +43,7 @@ buildExpired = false
   showReadingTime = true
   disableSpecificTags = ['content', 'gallery']
   origin = ['https://theagenticarch.com']
-  defaultTheme = 'auto'
+  defaultTheme = 'dark'
   disableThemeToggle = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
@@ -35,7 +56,7 @@ buildExpired = false
 
   # Fallback image for og:image / twitter:image / schema "image" on pages
   # without their own cover (homepage, About, Archive, Privacy).
-  images = ['/theagenticarch-logo.png']
+  images = ['/og-image.png']
 
   # Homepage <meta name="keywords">.
   keywords = ['agentic AI', 'AI agents', 'agent architecture', 'AI gateway', 'API gateway', 'MCP', 'model context protocol', 'context engineering', 'event-driven architecture', 'AI governance']

@@ -1,18 +1,31 @@
-{{- /* GA4 is only loaded after the reader opts in (see extend_footer.html for the banner). Hugo no longer ships an internal template, so PaperMod's include resolves here. */ -}}
+{{- /* GA4 with Google Consent Mode v2. gtag.js always loads, but every storage signal defaults to "denied" so no cookies are set and only cookieless pings are sent until the reader accepts (banner in extend_footer.html). */ -}}
 {{- with site.Config.Services.GoogleAnalytics.ID }}
+{{- $page := $.Page }}
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <script>
-  window.loadGA = function () {
-    if (window.gaLoaded) return;
-    window.gaLoaded = true;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id={{ . }}';
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { dataLayer.push(arguments); };
-    gtag('js', new Date());
-    gtag('config', '{{ . }}');
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+  window.setAnalyticsConsent = function (value) {
+    gtag('consent', 'update', { analytics_storage: value });
   };
-  try { if (localStorage.getItem('ga-consent') === 'granted') window.loadGA(); } catch (e) {}
+  try { if (localStorage.getItem('ga-consent') === 'granted') setAnalyticsConsent('granted'); } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', '{{ . }}', {
+    content_type: '{{ if $page.IsHome }}home{{ else if $page.IsPage }}{{ $page.Type }}{{ else }}{{ $page.Kind }}{{ end }}',
+    {{- if $page.IsPage }}
+    post_slug: '{{ $page.File.ContentBaseName | default $page.Slug }}',
+    {{- with $page.Params.tags }}content_tags: '{{ delimit . "," }}',{{ end }}
+    {{- if eq $page.Type "posts" }}reading_time: {{ $page.ReadingTime }},{{ end }}
+    {{- end }}
+    send_page_view: true
+  });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
 {{- end }}

@@ -2,13 +2,14 @@
 {{- $welcome := site.GetPage "/posts/hello-agentic-arch" }}
 {{- $featured := site.GetPage "/posts/from-pong-to-minecraft-genai-ux" }}
 {{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $latest := index $posts 0 }}
 
 <section class="home-hero" aria-labelledby="home-title">
   <p class="home-eyebrow">The Agentic Architect <span aria-hidden="true">·</span> with Hugo Guerrero</p>
   <h1 id="home-title">Architecture patterns for agentic systems people can trust.</h1>
   <p class="home-lede">Notes for the people building the capabilities, context, controls, and operating models behind useful AI agents.</p>
   <div class="home-actions">
-    {{- with $featured }}<a class="home-button home-button-primary" href="{{ .RelPermalink }}">Start with the latest essay</a>{{ end }}
+    {{- with $latest }}<a class="home-button home-button-primary" href="{{ .RelPermalink }}">Read the latest essay</a>{{ end }}
     {{- with $welcome }}<a class="home-button" href="{{ .RelPermalink }}">Read the welcome note</a>{{ end }}
   </div>
   <div class="home-social" aria-label="Follow @theagenticarch">

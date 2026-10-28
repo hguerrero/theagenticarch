@@ -87,4 +87,4 @@ Five things: clear ownership by a domain team, a versioned schema contract with 
 Both, depending on the moment. An agent typically pulls an API to understand current state, then relies on an event to learn that the state has changed—a shipping disruption, a fraud signal, a price change. Forcing everything into synchronous calls loses timeliness; forcing everything into streams makes simple queries needlessly complex.
 
 *Related: [Your AI Agent Needs a History, Not Just a Memory.](/posts/agents-need-history-not-just-memory/)*
-*Next: [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/)*
+*Next: [Start Here: Six Essays on the Architecture Beneath AI Agents](/posts/start-here/)*

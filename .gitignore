@@ -9,3 +9,6 @@
 
 # Diagram generator deps
 tools/diagrams/node_modules/
+
+# Local editorial notes
+docs/

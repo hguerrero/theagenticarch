@@ -4,6 +4,7 @@ date: 2026-10-20
 draft: false
 description: 'Current state and semantic memory are useful, but a durable ordered history is what makes agent decisions explainable and recoverable.'
 tags: ['agents', 'architecture', 'memory', 'events', 'observability', 'governance']
+pillars: ['Agentic Reliability']
 cover:
   image: '/images/agents-need-history-not-just-memory/cover.png'
   alt: 'Your AI Agent Needs a History, Not Just a Memory — an append-only ordered log of task events beside a memory cloud that projects from it'

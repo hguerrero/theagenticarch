@@ -1,0 +1,14 @@
+{
+  "name": "theagenticarch-diagrams",
+  "private": true,
+  "type": "module",
+  "description": "Generates cover images and hand-drawn figures for posts.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "opentype.js": "^1.3.4",
+    "roughjs": "4.6.6"
+  }
+}

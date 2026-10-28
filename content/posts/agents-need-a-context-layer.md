@@ -5,6 +5,7 @@ date: 2026-09-29
 draft: false
 description: 'Traditional integration moves data along predetermined paths. Agentic systems need a governed context layer that can be discovered and assembled at runtime.'
 tags: ['agents', 'architecture', 'context', 'integration', 'governance']
+pillars: ['Context Economy']
 cover:
   image: '/images/agents-need-a-context-layer/cover.png'
   alt: 'iPaaS Was Built for Applications. Agents Need a Context Layer — a context layer connecting an agent to records, APIs, events, documents, policies, and task state'

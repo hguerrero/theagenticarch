@@ -6,3 +6,9 @@
 # OS / editor noise
 .DS_Store
 *.swp
+
+# Diagram generator deps
+tools/diagrams/node_modules/
+
+# Local editorial notes
+docs/

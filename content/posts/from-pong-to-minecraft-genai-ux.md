@@ -4,6 +4,8 @@ date: 2026-08-20
 draft: false
 description: 'Generative AI shifts enterprise software from predefined workflows to intent-driven experiences—and makes architecture the foundation of UX.'
 tags: ['agents', 'architecture', 'generative-ai', 'user-experience', 'apis']
+pillars: ['API Foundation']
+featured: true
 cover:
   image: '/images/from-pong-to-minecraft-genai-ux/cover.png'
   alt: 'From Pong to Minecraft: How GenAI Is Redefining the User Experience — fixed rules evolving into more paths, then into blocks you build'

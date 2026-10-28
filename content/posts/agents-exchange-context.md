@@ -4,6 +4,7 @@ date: 2026-10-13
 draft: false
 description: 'Multi-agent systems are context-distribution systems. Reliable handoffs need contracts, ownership, and evidence—not conversational improvisation.'
 tags: ['agents', 'architecture', 'context', 'multi-agent', 'governance']
+pillars: ['Context Economy']
 cover:
   image: '/images/agents-exchange-context/cover.png'
   alt: 'Agents Don’t Really Talk. They Exchange Context — two agents connected by a handoff, not a chat bubble'

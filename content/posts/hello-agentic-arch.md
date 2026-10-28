@@ -41,4 +41,4 @@ Architects, API and platform teams, product leaders, and builders who are moving
 
 ### Where should I start reading?
 
-Start with [From Pong to Minecraft: How GenAI Is Redefining the User Experience](/posts/from-pong-to-minecraft-genai-ux/), which lays out the central shift this site explores, or jump to [The Agentic Architect: Season 1](/posts/agentic-architect-season-one/) for a guided recap of the first six essays on agent architecture.
+Start with [From Pong to Minecraft: How GenAI Is Redefining the User Experience](/posts/from-pong-to-minecraft-genai-ux/), which lays out the central shift this site explores, or jump to [Start Here](/posts/start-here/) for a guided reading order through the six essays on agent architecture.

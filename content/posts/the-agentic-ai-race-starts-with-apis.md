@@ -4,6 +4,7 @@ date: 2026-09-20
 draft: false
 description: 'API infrastructure offers a strong foundation for agentic AI—but only vendors that treat agents as first-class architectural concerns will lead the transition.'
 tags: ['agents', 'architecture', 'apis', 'mcp', 'cloud-native', 'governance']
+pillars: ['API Foundation']
 cover:
   image: '/images/the-agentic-ai-race-starts-with-apis/cover.png'
   alt: 'The Agentic AI Race Starts With APIs — an agent-native layer of tools, context, delegation, and budgets built on an API heritage of identity, policy, and traffic'

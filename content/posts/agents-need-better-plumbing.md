@@ -4,6 +4,7 @@ date: 2026-09-22
 draft: false
 description: 'Agentic systems usually fail at the integration layer: context, capabilities, identity, and controls—not at the model.'
 tags: ['agents', 'architecture', 'apis', 'governance', 'context']
+pillars: ['Agentic Infrastructure']
 cover:
   image: '/images/agents-need-better-plumbing/cover.png'
   alt: 'Your Agents Don’t Need Better Models. They Need Better Plumbing — a model sitting atop APIs, events, identity, and records, with stale data dripping through'

@@ -1,7 +1,10 @@
-{{- /* "Keep reading": the two most recent other posts. */ -}}
+{{- /* "Keep reading": two posts from the same pillar first, then the most recent. */ -}}
 {{- if eq .Type "posts" }}
 {{- $self := . }}
-{{- $more := first 2 (where (where site.RegularPages "Type" "in" site.Params.mainSections) "RelPermalink" "ne" .RelPermalink) }}
+{{- $others := where (where site.RegularPages "Type" "in" site.Params.mainSections) "RelPermalink" "ne" .RelPermalink }}
+{{- $same := slice }}
+{{- with .Params.pillars }}{{ $same = where $others "Params.pillars" "intersect" . }}{{ end }}
+{{- $more := first 2 ($same | union $others) }}
 {{- with $more }}
 <aside class="keep-reading" aria-labelledby="keep-reading-title">
   <h2 id="keep-reading-title">Keep reading</h2>

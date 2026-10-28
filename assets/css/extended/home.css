@@ -65,3 +65,15 @@
 .home-card .home-post-meta { font-size: .75rem; margin: 0; }
 @media (max-width: 900px) { .home-card-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .home-card { transition: none; } }
+
+/* Pillars (five themes) */
+.home-section-lede { color: var(--secondary); line-height: 1.6; margin: .5rem 0 0; max-width: 640px; }
+.home-pillar-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); list-style: none; margin: 1.25rem 0 0; padding: 0; }
+.home-pillar { margin: 0; padding: 0; }
+.home-pillar-link { background: var(--entry); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: 8px; color: inherit; display: flex; flex-direction: column; height: 100%; padding: 1.1rem 1.15rem 1rem; text-decoration: none; transition: transform .15s, border-color .15s; }
+.home-pillar-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+.home-pillar-num { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; letter-spacing: .08em; }
+.home-pillar h3 { font-size: 1.1rem; line-height: 1.25; margin: .35rem 0 .45rem; }
+.home-pillar p { color: var(--secondary); flex: 1; font-size: .9rem; line-height: 1.5; margin: 0 0 .8rem; }
+.home-pillar-count { color: var(--accent); font-size: .85rem; font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { .home-pillar-link { transition: none; } }

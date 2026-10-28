@@ -4,6 +4,7 @@ date: 2026-10-27
 draft: false
 description: 'Event streams are business products, not an ungoverned firehose. Treating them like APIs makes real-time context usable for people, applications, and agents.'
 tags: ['agents', 'architecture', 'events', 'apis', 'governance', 'kafka']
+pillars: ['Event-Driven Agents']
 cover:
   image: '/images/events-are-apis-too/cover.png'
   alt: 'Events Are APIs Too — an OrderShipped event product, versioned and owned, flowing from a raw topic to agents and applications'

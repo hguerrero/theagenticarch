@@ -32,6 +32,21 @@ buildExpired = false
     source = 'archetypes'
     target = 'archetypes'
 
+# Editorial pillars (front matter: pillars: ['Context Economy']) alongside tags.
+[taxonomies]
+  tag = 'tags'
+  pillar = 'pillars'
+
+# llms.txt is generated from published posts (layouts/index.llms.txt).
+[outputFormats.llms]
+  mediaType = 'text/plain'
+  baseName = 'llms'
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ['html', 'rss', 'llms']
+
 [minify]
   disableXML = true
   minifyOutput = true
@@ -118,6 +133,12 @@ buildExpired = false
   name = 'Articles'
   url = '/posts/'
   weight = 10
+
+[[menu.main]]
+  identifier = 'pillars'
+  name = 'Topics'
+  url = '/pillars/'
+  weight = 15
 
 [[menu.main]]
   identifier = 'about'

@@ -5,6 +5,7 @@ date: 2026-10-06
 draft: false
 description: 'A practical architecture for connecting agents to APIs, events, knowledge, and controls without creating another centralized bottleneck.'
 tags: ['agents', 'architecture', 'context', 'apis', 'events', 'governance']
+pillars: ['Agentic Infrastructure']
 cover:
   image: '/images/building-the-context-layer/cover.png'
   alt: 'Building the Context Layer — capability, context, event, control, and evidence layers stacked beneath an agent, on top of existing sources of truth'

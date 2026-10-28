@@ -1,0 +1,22 @@
+# {{ site.Title }}
+
+> {{ site.Params.description }}
+
+The site argues that agent quality is bounded less by model choice than by the surrounding architecture — discoverable capabilities, governed and current context, identity and authorization, durable history, and controls enforced at the point of action. Content is written for architects, API and platform teams, product leaders, and builders moving from AI demos to durable systems.
+
+## Essays
+
+{{ range (where site.RegularPages "Type" "in" site.Params.mainSections).ByDate -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{ end }}
+## About
+
+- [About Hugo Guerrero and The Agentic Architect]({{ "about/" | absURL }}): Author background and the site's focus on agent design, APIs/events/MCP, and the identity, authorization, and governance controls that make agentic systems trustworthy.
+
+## Topics
+{{ with site.GetPage "/pillars" }}{{ range .Pages }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}{{ end }}{{ end }}
+
+## Optional
+
+- [Privacy Policy]({{ "privacy/" | absURL }}): Analytics, cookies, and data handling.

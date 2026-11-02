@@ -1,6 +1,6 @@
 ---
 title: 'The MCP Data Path: Where Does Your Agent Actually Go?'
-date: 2026-12-08
+date: 2026-12-01
 draft: false
 description: 'Follow one customer record through an agent system. It crosses more trust boundaries, and is copied in more places, than most teams realize. Map the path before you try to govern it.'
 tags: ['mcp', 'agents', 'data-governance', 'observability', 'architecture']

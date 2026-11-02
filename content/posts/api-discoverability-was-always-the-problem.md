@@ -1,6 +1,6 @@
 ---
 title: 'API Discoverability Was Always the Problem. Agents Just Made It Impossible to Ignore.'
-date: 2026-12-01
+date: 2026-11-24
 draft: false
 description: 'Enterprises have long struggled to help people find the APIs they already own. MCP registries and agent capability discovery extend that old problem. They do not invent a new one.'
 tags: ['apis', 'discovery', 'mcp', 'agents', 'api-management']

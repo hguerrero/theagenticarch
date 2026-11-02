@@ -1,6 +1,6 @@
 ---
 title: 'What 20 Years of API Design Taught Me About Agents'
-date: 2026-11-17
+date: 2026-11-10
 draft: false
 description: 'We spent two decades making APIs easy for developers to discover and consume. Agents change the consumer, and the old lessons apply in a stricter form.'
 tags: ['agents', 'apis', 'api-design', 'architecture', 'mcp']

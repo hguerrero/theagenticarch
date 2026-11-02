@@ -1,6 +1,6 @@
 ---
 title: 'The MCP Registry Is Becoming the App Store for Agents'
-date: 2026-12-15
+date: 2026-12-08
 draft: false
 description: 'Hard-coded tool lists work for prototypes and break in the enterprise. A registry separates finding a capability from running it, and that makes governance possible. The app store analogy is useful and incomplete.'
 tags: ['mcp', 'registry', 'agents', 'governance', 'discovery']

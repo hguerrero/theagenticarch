@@ -1,6 +1,6 @@
 ---
 title: 'A Simple Agent Request Is Actually a Distributed System'
-date: 2026-11-10
+date: 2026-11-03
 draft: false
 description: 'Ask an agent for the weather and ten messages cross five components. Agentic AI is not only an AI problem. It is a distributed-systems problem, and it needs distributed-systems discipline.'
 tags: ['agents', 'mcp', 'architecture', 'distributed-systems', 'observability']

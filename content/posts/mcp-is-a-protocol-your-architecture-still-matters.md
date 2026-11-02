@@ -1,6 +1,6 @@
 ---
 title: 'MCP Is a Protocol. Your Architecture Still Matters.'
-date: 2026-11-24
+date: 2026-11-17
 draft: false
 description: 'The Model Context Protocol standardizes how agents talk to tools. It does not decide what a good tool is, who owns it, or what it is allowed to do. Those are still architecture decisions.'
 tags: ['mcp', 'agents', 'architecture', 'apis', 'tool-design']

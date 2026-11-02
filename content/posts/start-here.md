@@ -1,6 +1,6 @@
 ---
 title: 'Start Here: Six Essays on the Architecture Beneath AI Agents'
-date: 2026-11-03
+date: 2026-11-02
 draft: false
 description: 'A reading guide to The Agentic Architect: six essays on the APIs, events, context, memory, and control beneath useful, trustworthy AI agents, in the order that makes the argument easiest to follow.'
 tags: ['agents', 'architecture', 'context', 'apis', 'events']

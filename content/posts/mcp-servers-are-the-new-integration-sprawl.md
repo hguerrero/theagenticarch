@@ -1,6 +1,6 @@
 ---
 title: 'MCP Servers Are the New Integration Sprawl'
-date: 2026-12-22
+date: 2026-12-15
 draft: false
 description: 'MCP is valuable because it exposes a new integration boundary. The mistake is believing the protocol eliminates architecture. Without ownership and design, servers recreate the problems we spent decades removing.'
 tags: ['mcp', 'integration', 'architecture', 'technical-debt', 'governance']

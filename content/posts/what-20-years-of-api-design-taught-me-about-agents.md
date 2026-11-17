@@ -10,7 +10,7 @@ cover:
   alt: 'What 20 Years of API Design Taught Me About Agents — a timeline from API design to agents with the consumer changing from developer to machine'
 ---
 
-I started writing about API design in 2012. Back then the question was how to make an API good enough that a developer would pick it, learn it quickly, and keep using it.
+I started following API design in 2012. Back then the question was how to make an API good enough that a developer would pick it, learn it quickly, and keep using it.
 
 Since then the question has barely changed, but the reader has. The consumer is no longer only a developer reading documentation at a desk. Increasingly it is an agent, working from whatever it can discover and understand at runtime.
 
@@ -20,27 +20,27 @@ I think that makes the old lessons more important, not less.
 
 ## The lessons, then and now
 
-The *Building Great APIs* series I wrote with Steven Willmott at Red Hat, in 2012 and 2013, started from a simple checklist for what makes an API succeed: it provides real value, it has a plan and a business model, it is simple and flexible, it is well managed, and it is well supported. Four of those ideas carry straight across to agents. Each one gets stricter.
+The *Building Great APIs* series that Steven Willmott wrote at 3scale, before Red Hat acquired it, in 2012 and 2013, started from a simple checklist for what makes an API succeed: it provides real value, it has a plan and a business model, it is simple and flexible, it is well managed, and it is well supported. Four of those ideas carry straight across to agents. Each one gets stricter.
 
 ![Timeline from API design and API management through developer portals and event-driven APIs to MCP and agents, with the consumer shifting from developer to machine](/images/what-20-years-of-api-design-taught-me-about-agents/fig-1-same-problem-new-consumer.png)
 
 ### 1. Value: the API is a channel into the business
 
-The first lesson was that the value of an API is the effect it produces, not the API itself. Our example was a pizza company: the API succeeds if it sells pizza, and it serves developers if it makes ordering and delivery easy. Three consequences followed. Raw metrics such as call counts can mislead, because a chatty API that completes no real transactions is not succeeding. The API has to support *complete use cases*: a catalog you can browse but not buy from is not valuable. And the benefit has to be clear from the start.
+The first lesson was that the value of an API is the effect it produces, not the API itself. His example was a pizza company: the API succeeds if it sells pizza, and it serves developers if it makes ordering and delivery easy. Three consequences followed. Raw metrics such as call counts can mislead, because a chatty API that completes no real transactions is not succeeding. The API has to support *complete use cases*: a catalog you can browse but not buy from is not valuable. And the benefit has to be clear from the start.
 
 For agents this is sharper. A model choosing among tools has no patience for plumbing. A tool named `update_row` exposes your system. A tool named `reschedule_delivery` completes a task. Design the capability around the outcome the consumer wants, then implement it however you like, and judge it by completed tasks rather than by call counts.
 
 ### 2. Simplicity and flexibility: atomic operations and macros
 
-Part II warned against *false simplicity*: an API whose individual methods are simple but which forces a client to make many calls to get anything useful done. Our advice was to expose atomic operations that can be combined to cover everything the system can sensibly do, then add a second layer of macro operations for the common workflows.
+Part II warned against *false simplicity*: an API whose individual methods are simple but which forces a client to make many calls to get anything useful done. His advice was to expose atomic operations that can be combined to cover everything the system can sensibly do, then add a second layer of macro operations for the common workflows.
 
 That is the shape of a good MCP server today. A server that exposes one tool per endpoint offers only the atomic layer and pushes workflow assembly onto the model. A server with task-shaped tools adds the macro layer. The principle is fourteen years old.
 
-The same part introduced TTFHW, *time to first hello world*: how long it takes a new developer to get working code. We counted signup in it, because "email us for a key" is as much of a barrier as poor documentation. The agent version is **time to first safe action**. How quickly can an agent find the capability, understand it, call it correctly, and recover if it does not? An access process that needs a human to read an email is a barrier for an agent too, and often a worse one.
+The same part introduced TTFHW, *time to first hello world*: how long it takes a new developer to get working code. He counted signup in it, because "email us for a key" is as much of a barrier as poor documentation. The agent version is **time to first safe action**. How quickly can an agent find the capability, understand it, call it correctly, and recover if it does not? An access process that needs a human to read an email is a barrier for an agent too, and often a worse one.
 
 ### 3. Management: someone has to run it
 
-Part III argued that an API is a window into an organization's data and functions, so it creates dependencies and needs managing. We split management into technical operations, such as access control, rate limits, kill switches, and monitoring, and business operations, such as access rights and per-application analytics. Even APIs with no commercial purpose benefit from knowing who uses them, because analytics reveal design problems and abuse.
+Part III argued that an API is a window into an organization's data and functions, so it creates dependencies and needs managing. He split management into technical operations, such as access control, rate limits, kill switches, and monitoring, and business operations, such as access rights and per-application analytics. Even APIs with no commercial purpose benefit from knowing who uses them, because analytics reveal design problems and abuse.
 
 Agents raise the stakes. A developer integrates once and tests the result. An agent may call the same capability thousands of times, in sequences nobody anticipated, on behalf of different users. Identity, quotas, a kill switch, and usage visibility are not optional extras for that traffic. They are how you find out what the agent actually did.
 

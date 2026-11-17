@@ -1,6 +1,6 @@
 ---
 title: 'KubeCon Salt Lake City: Is the Pod Still the Unit?'
-date: 2026-11-22
+date: 2026-11-15
 draft: false
 description: 'My takeaways from KubeCon + CloudNativeCon North America 2026: agents strain the pod model, sandboxes compete for the runtime layer, identity becomes the control point, and what Solo.io shared in Salt Lake City.'
 tags: ['kubecon', 'kubernetes', 'agents', 'sandboxing', 'identity', 'agentgateway', 'kagent']
